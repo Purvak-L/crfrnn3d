@@ -526,7 +526,7 @@ void ModifiedPermutohedral::init_gpu(const float* features, int num_dimensions, 
         gpu_init<15>(features, &table, matrix, w_, h_);
         break;  
       default:
-        std::cout << "num_dimensions should be in [2, 10]";
+        std::cout << "num_dimensions should be in [2, 15]";
     }
     is_init = true;
 }
@@ -579,6 +579,6 @@ void ModifiedPermutohedral::compute_gpu(float* out, const float* in, int value_s
         gpu_compute<15, float>(out, in, table, matrix, w_, h_, value_size, reverse, add);
         break;   
       default:
-        std::cout << "num_dimensions should be in [2, 10]"; 
+        std::cout << "num_dimensions should be in [2, 15]"; 
     }
 }

@@ -590,8 +590,23 @@ void ModifiedPermutohedral3D::init_gpu(const float* features,
       case 10:
         gpu_init<10>(features, &table, matrix, w_, h_, d_);
         break;  
+      case 11:
+        gpu_init<11>(features, &table, matrix, w_, h_, d_);
+        break;
+      case 12:
+        gpu_init<12>(features, &table, matrix, w_, h_, d_);
+        break;
+      case 13:
+        gpu_init<13>(features, &table, matrix, w_, h_, d_);
+        break;
+      case 14:
+        gpu_init<14>(features, &table, matrix, w_, h_, d_);
+        break;  
+      case 15:
+        gpu_init<15>(features, &table, matrix, w_, h_, d_);
+        break;    
       default:
-        std::cout << "num_dimensions should be in [2, 10] but is " << ndim_ << " for init\n";
+        std::cout << "num_dimensions should be in [2, 15] but is " << ndim_ << " for init\n";
     }
     is_init = true;
 }
@@ -631,8 +646,23 @@ void ModifiedPermutohedral3D::compute_gpu(float* out,
         break;    
       case 10:
         gpu_compute<10, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
+        break;
+      case 11:
+        gpu_compute<11, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
+        break; 
+      case 12:
+        gpu_compute<12, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
         break;  
+      case 13:
+        gpu_compute<13, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
+        break;
+      case 14:
+        gpu_compute<14, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
+        break;  
+      case 15:
+        gpu_compute<15, float>(out, in, table, matrix, w_, h_, d_, value_size, reverse, add);
+        break;     
       default:
-        std::cout << "num_dimensions should be in [2, 10] but is " << ndim_ << "\n";            
+        std::cout << "num_dimensions should be in [2, 15] but is " << ndim_ << "\n";            
     }
 }
